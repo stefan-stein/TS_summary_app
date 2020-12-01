@@ -12,9 +12,6 @@ nlp = spacy.load('en_core_web_sm')
 from bs4 import BeautifulSoup
 from urllib.request import urlopen
 
-# from scripts import tabledef
-# from scripts import forms
-# from scripts import helpers
 
 from flask import Flask, redirect, url_for, render_template, request, session, jsonify
 import json
@@ -91,9 +88,6 @@ def create_app(test_config=None):
                 end = time.time()
                 final_time = end-start
                 time_saved = final_reading_time - summary_reading_time
-                # user = helpers.get_user()
-                # user.active = True
-                # user.key = stripe_keys['publishable_key']
             return render_template('home.html',
                 ctext=rawtext,final_summary=final_summary,
                 final_reading_time=final_reading_time,summary_reading_time=summary_reading_time,time_saved=time_saved)
@@ -111,9 +105,6 @@ def create_app(test_config=None):
                 end = time.time()
                 final_time = end-start
                 time_saved = final_reading_time - summary_reading_time
-                # user = helpers.get_user()
-                # user.active = True
-                # user.key = stripe_keys['publishable_key']
             return render_template('home.html',
                 ctext=rawtext,final_summary=final_summary,
                 final_reading_time=final_reading_time,summary_reading_time=summary_reading_time,time_saved=time_saved)
